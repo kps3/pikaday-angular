@@ -129,11 +129,14 @@
 
               config[attr] = pikadayConfig.locales[value];
 
+            case "i18nlocale":
+
+              config["i18n"] = angular.fromJson(value);
+
           }
         }
 
         // instantiate pikaday with config, bind to scope, add destroy event callback
-
         var picker = new Pikaday(config);
         scope.pikaday = picker;
         scope.$on('$destroy', function () {
